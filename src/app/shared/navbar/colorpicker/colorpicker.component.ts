@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { THEMES } from 'src/app/constants/themes.constants';
-import { Option } from 'src/app/services/theme.service';
+import { IThemeOption } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-colorpicker',
@@ -8,7 +8,7 @@ import { Option } from 'src/app/services/theme.service';
   styleUrls: ['./colorpicker.component.scss'],
 })
 export class ColorpickerComponent {
-  options: Option[] = THEMES;
+  options: IThemeOption[] = THEMES;
   @Output() themeChange: EventEmitter<string> = new EventEmitter<string>();
 
   changeTheme(themeToSet: string): void {
