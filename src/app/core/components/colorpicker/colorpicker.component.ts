@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { THEMES } from 'src/app/constants/themes.constants';
-import { IThemeOption } from 'src/app/services/theme.service';
+import { THEMES } from 'src/app/core/constants/themes.constants';
+import { IThemeOption } from '../../services/theme.service';
 
 @Component({
   selector: 'app-colorpicker',

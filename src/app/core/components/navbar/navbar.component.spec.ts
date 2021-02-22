@@ -1,10 +1,10 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { STATE_THEME_KEY } from 'src/app/constants/states.constants';
-import { DEFAULT_THEME } from 'src/app/constants/themes.constants';
-import { LocalStorageService } from 'src/app/services/local-storage.service';
-import { ThemeService } from 'src/app/services/theme.service';
+import { STATE_THEME_KEY } from 'src/app/core/constants/states.constants';
+import { DEFAULT_THEME } from 'src/app/core/constants/themes.constants';
+import { LocalStorageService } from '../../services/local-storage.service';
+import { ThemeService } from '../../services/theme.service';
 
 import { NavbarComponent } from './navbar.component';
 

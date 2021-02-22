@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { ThemeService } from 'src/app/services/theme.service';
-import { LocalStorageService } from 'src/app/services/local-storage.service';
-import { STATE_THEME_KEY } from 'src/app/constants/states.constants';
+import { STATE_THEME_KEY } from 'src/app/core/constants/states.constants';
 import {
   DEFAULT_THEME,
   VALID_THEMES_TYPES,
-} from 'src/app/constants/themes.constants';
+} from 'src/app/core/constants/themes.constants';
+import { ThemeService } from '../../services/theme.service';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-navbar',
