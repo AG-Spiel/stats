@@ -3,6 +3,12 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { ThemeService } from 'src/app/services/theme.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { STATE_THEME_KEY } from 'src/app/constants/states.constants';
+import {
+  DEFAULT_THEME,
+  VALID_THEMES_TYPES,
+} from 'src/app/constants/themes.constants';
 
 @Component({
   selector: 'app-navbar',
@@ -19,14 +25,26 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private readonly breakpointObserver: BreakpointObserver,
-    private readonly themeService: ThemeService
+    private readonly themeService: ThemeService,
+    private readonly storageService: LocalStorageService
   ) {}
 
   ngOnInit(): void {
-    this.themeService.setTheme('pink-bluegrey');
+    this.chooseTheme();
   }
 
   themeChangeHandler(themeToSet: string): void {
     this.themeService.setTheme(themeToSet);
+    this.storageService.setItem(STATE_THEME_KEY, themeToSet);
+  }
+
+  private chooseTheme(): void {
+    const favoritedTheme = this.storageService.getItem(STATE_THEME_KEY);
+    if (favoritedTheme != null && VALID_THEMES_TYPES.includes(favoritedTheme)) {
+      this.themeService.setTheme(favoritedTheme);
+      this.storageService.setItem(STATE_THEME_KEY, favoritedTheme);
+    } else {
+      this.themeService.setTheme(DEFAULT_THEME);
+    }
   }
 }
