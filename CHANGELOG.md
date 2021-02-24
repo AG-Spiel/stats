@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/AG-Spiel/stats/compare/v1.0.0...v1.1.0) (2021-02-24)
+
+
+### Features
+
+* **constants:** Add theme constants ([d225b7b](https://github.com/AG-Spiel/stats/commit/d225b7b4fa2589346376ba6e13162ae817dbf969))
+* **storage:** Create local storage service ([6161b33](https://github.com/AG-Spiel/stats/commit/6161b33eff83ff6fa8d484c9b5fc4f4c97f93e5f))
+* **theme:** Implement theme loading on page load ([fecf589](https://github.com/AG-Spiel/stats/commit/fecf589997f86f56a1d7533de69fc8061976e41c))
+
 # 1.0.0 (2021-02-21)
 
 
