@@ -47,7 +47,6 @@ describe('StyleManagerService', () => {
     let styleEl = document.head.querySelector(
       '.app-style-manager-test'
     ) as HTMLLinkElement;
-    console.log(document.head.querySelectorAll('link[rel="stylesheet"]'));
     expect(styleEl).not.toBeNull();
     expect(styleEl.href.endsWith('test.css')).toBe(true);
 
