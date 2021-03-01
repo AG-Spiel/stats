@@ -1,3 +1,20 @@
+# [1.2.0](https://github.com/AG-Spiel/stats/compare/v1.1.0...v1.2.0) (2021-03-01)
+
+
+### Features
+
+* **card:** Create custom card with titles ([a781ea3](https://github.com/AG-Spiel/stats/commit/a781ea31e804ce1c02e96f1d1afae96c7c2c0793))
+* **index-page:** Create basic layout index-page ([66a000a](https://github.com/AG-Spiel/stats/commit/66a000ab66c03341cc1aad364f49ce4761402672))
+* **indizes-page:** Create basic layout indizes-page ([3835647](https://github.com/AG-Spiel/stats/commit/3835647d1e1fc1152a82e0e310a36dab48c9a13f))
+* **landing:** Create basic layout landing page ([f0c3e51](https://github.com/AG-Spiel/stats/commit/f0c3e51bda6a8722c2883f75f9deff48175ba13c))
+* **market-board:** Create layout market dashboard ([c06b3d2](https://github.com/AG-Spiel/stats/commit/c06b3d27e1c836e8bf3feac179e0db7da4b53512))
+* **navbar:** Enable routing and add shadow to nav ([3da60d0](https://github.com/AG-Spiel/stats/commit/3da60d0f5b11af547858ea7db9c1f3aba8a1e8d3))
+* **page:** Create page wrapper with headings ([c9b42c3](https://github.com/AG-Spiel/stats/commit/c9b42c3bdc10a79e5e116f87eb9214b4e50232bd))
+* **routing:** Enable lazy loading and hash mode ([cbb067e](https://github.com/AG-Spiel/stats/commit/cbb067e1f174e6f3e81e76231ffeb4c2f4d8ca4b))
+* **share-page:** Create basic layout share-page ([dd44834](https://github.com/AG-Spiel/stats/commit/dd44834d20f9279f63d834f58707ae729d965979))
+* **shares-page:** Create basic layout shares-page ([a78cf83](https://github.com/AG-Spiel/stats/commit/a78cf833e96d449eb5432caf36eb67e8a6f0b691))
+* **style:** Add global scss variables ([ec25363](https://github.com/AG-Spiel/stats/commit/ec25363c804b5a871c9734a339218c7ef969745c))
+
 # [1.1.0](https://github.com/AG-Spiel/stats/compare/v1.0.0...v1.1.0) (2021-02-24)
 
 
