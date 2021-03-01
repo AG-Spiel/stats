@@ -1,0 +1,22 @@
+@import "~src/variables.scss";
+
+.market-page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.market {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.card {
+  width: $pageWidth;
+}
+
+.cardrow {
+  width: $pageWidth;
+  margin-bottom: 1rem;
+}
