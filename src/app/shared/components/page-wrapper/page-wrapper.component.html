@@ -1,0 +1,17 @@
+<div class="main">
+  <div class="page-wrapper">
+    <div class="page-wrapper-heading" *ngIf="heading">
+      <app-page-heading>
+        {{ heading }}
+      </app-page-heading>
+    </div>
+    <div class="page-wrapper-sub-heading" *ngIf="subheading">
+      <app-page-subheading>
+        {{ subheading }}
+      </app-page-subheading>
+    </div>
+    <div class="page-wrapper-body">
+      <ng-content> </ng-content>
+    </div>
+  </div>
+</div>
