@@ -16,6 +16,9 @@ export const URLS = {
     INDEX: {
       ALL: `${AGS_STATS_BASE}/index`,
       ID: (id: string) => `${AGS_STATS_BASE}/index/${id}`,
+      ORDER: (id: string) => `${AGS_STATS_BASE}/index/${id}/order`,
+      DEPOT: (id: string) => `${AGS_STATS_BASE}/index/${id}/depot`,
+      CHART: (id: string) => `${AGS_STATS_BASE}/index/${id}/chart`,
     },
     TREEMAP: {},
   },
