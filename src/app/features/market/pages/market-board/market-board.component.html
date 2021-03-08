@@ -1,17 +1,41 @@
-<app-page-wrapper heading="Marktweite Statistiken" subheading="Gesamtüberblick">
+<app-page-wrapper heading="Marktweite Statistiken">
   <div class="market cardrow">
     <app-card title="Markt" subtitle="Kumulierte Werte aller AGs">
-      <p>Market Card Body</p>
+      <div class="card-bodyrow">
+        <div class="chart-container container">
+          <app-line-chart
+            id="market"
+            [url]="marketChartUrl"
+            [series]="marketChartSeries"
+          ></app-line-chart>
+        </div>
+      </div>
     </app-card>
   </div>
   <div class="depots cardrow">
     <app-card title="Depots" subtitle="Kumulierte Depots aller AGs">
-      <p>Depot Card Body</p>
+      <div class="card-bodyrow">
+        <div class="chart-container container">
+          <app-line-chart
+            id="depot"
+            [url]="depotChartUrl"
+            [series]="depotChartSeries"
+          ></app-line-chart>
+        </div>
+      </div>
     </app-card>
   </div>
   <div class="order cardrow">
     <app-card title="Orderbücher" subtitle="Kumulierte Orderbücher aller AGs">
-      <p>Order Card Body</p>
+      <div class="card-bodyrow">
+        <div class="chart-container container">
+          <app-line-chart
+            id="order"
+            [url]="orderChartUrl"
+            [series]="orderChartSeries"
+          ></app-line-chart>
+        </div>
+      </div>
     </app-card>
   </div>
   <div class="cover cardrow">
@@ -19,7 +43,15 @@
       title="Übernahmeschutz"
       subtitle="Anzahl der Spieler mit oder ohne ÜS"
     >
-      <p>Cover Card Body</p>
+      <div class="card-bodyrow">
+        <div class="chart-container container">
+          <app-line-chart
+            id="cover"
+            [url]="coverChartUrl"
+            [series]="coverChartSeries"
+          ></app-line-chart>
+        </div>
+      </div>
     </app-card>
   </div>
   <div class="prem cardrow">
@@ -27,7 +59,15 @@
       title="Premium"
       subtitle="Anzahl der Spieler mit Gold-, Silber- oder ohne Premium"
     >
-      <p>Prem Card Body</p>
+      <div class="card-bodyrow">
+        <div class="chart-container container">
+          <app-line-chart
+            id="prem"
+            [url]="premChartUrl"
+            [series]="premChartSeries"
+          ></app-line-chart>
+        </div>
+      </div>
     </app-card>
   </div>
 </app-page-wrapper>
