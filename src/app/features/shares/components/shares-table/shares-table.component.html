@@ -1,0 +1,88 @@
+<div>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Suche nach AG..."
+      (keyup)="searchShares($event)"
+    />
+  </mat-form-field>
+  <mat-table class="mat-elevation-z8 indizes-table" [dataSource]="data" matSort>
+    <!-- WKN -->
+    <ng-container matColumnDef="wkn">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>WKN</mat-header-cell>
+      <mat-cell *matCellDef="let share">
+        <button
+          mat-raised-button
+          color="primary"
+          [routerLink]="['/wkn', share.wkn]"
+        >
+          {{ share.wkn }}
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Name -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+      <mat-cell *matCellDef="let share">
+        {{ share.name }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- CEO -->
+    <ng-container matColumnDef="ceo">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>CEO</mat-header-cell>
+      <mat-cell *matCellDef="let share">
+        {{ share.ceo }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Gründung -->
+    <ng-container matColumnDef="founding">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Gründung</mat-header-cell
+      >
+      <mat-cell *matCellDef="let share">
+        {{ share.founding | date }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Gebannt -->
+    <ng-container matColumnDef="isBanned">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Gebannt</mat-header-cell
+      >
+      <mat-cell *matCellDef="let share">
+        {{ share.isBanned }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Userprojekt -->
+    <ng-container matColumnDef="isUserproject">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Userprojekt</mat-header-cell
+      >
+      <mat-cell *matCellDef="let share">
+        {{ share.isUserproject }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Liquidation -->
+    <ng-container matColumnDef="inLiquidation">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Liquidation</mat-header-cell
+      >
+      <mat-cell *matCellDef="let share">
+        {{ share.inLiquidation }}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="activatedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: activatedColumns"></mat-row>
+  </mat-table>
+  <mat-paginator
+    [pageSize]="10"
+    [pageSizeOptions]="[10, 20, 50]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>

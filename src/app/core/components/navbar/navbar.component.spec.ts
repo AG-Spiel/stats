@@ -2,7 +2,6 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { STATE_THEME_KEY } from 'src/app/core/constants/states.constants';
-import { DEFAULT_THEME } from 'src/app/core/constants/themes.constants';
 import { LocalStorageService } from '../../services/local-storage.service';
 import { ThemeService } from '../../services/theme.service';
 
@@ -17,7 +16,11 @@ describe('NavbarComponent', () => {
   let mockStorageService: jasmine.SpyObj<LocalStorageService>;
 
   beforeEach(async () => {
-    mockThemeService = jasmine.createSpyObj('ThemeService', ['setTheme']);
+    mockThemeService = jasmine.createSpyObj('ThemeService', [
+      'setTheme',
+      'setDefaultTheme',
+      'setChartTheme',
+    ]);
     mockBreakpointObserver = jasmine.createSpyObj('BreakpointObserver', [
       'observe',
     ]);
@@ -55,39 +58,56 @@ describe('NavbarComponent', () => {
   });
 
   it(
-    'should create and set default theme',
+    'should create with default theme',
     waitForAsync(() => {
-      mockThemeService.setTheme.and.returnValue();
+      mockThemeService.setDefaultTheme.and.returnValue();
 
-      mockStorageService.getItem.and.returnValue(null);
       fixture.detectChanges();
 
       fixture.whenStable().then(() => {
         expect(component).toBeTruthy();
-        expect(mockStorageService.getItem).toHaveBeenCalledWith(
-          STATE_THEME_KEY
-        );
-        expect(mockThemeService.setTheme).toHaveBeenCalledOnceWith(
-          DEFAULT_THEME
-        );
+        expect(mockThemeService.setDefaultTheme).toHaveBeenCalled();
         expect(mockBreakpointObserver.observe).toHaveBeenCalled();
       });
     })
   );
 
+  it('should reload window', () => {
+    mockBreakpointObserver.observe.and.returnValue(
+      of({ matches: false, breakpoints: {} })
+    );
+    const mockWindow = {
+      location: {
+        reload: jasmine.createSpy(),
+      },
+    };
+
+    fixture.detectChanges();
+
+    fixture.whenStable().then(() => {
+      component.reloadWindowToApplyThemes((mockWindow as unknown) as Window);
+      expect(mockWindow.location.reload).toHaveBeenCalled();
+    });
+  });
+
   it(
     'should change the theme',
     waitForAsync(() => {
-      mockThemeService.setTheme.and.returnValue();
+      mockStorageService.setItem.and.returnValue();
       mockBreakpointObserver.observe.and.returnValue(
         of({ matches: false, breakpoints: {} })
       );
-      mockStorageService.getItem.and.returnValue(null);
+      const reloadWindowSpy = spyOn(component, 'reloadWindowToApplyThemes');
+
       fixture.detectChanges();
 
       fixture.whenStable().then(() => {
         component.themeChangeHandler('newTheme');
-        expect(mockThemeService.setTheme).toHaveBeenCalledWith('newTheme');
+        expect(mockStorageService.setItem).toHaveBeenCalledWith(
+          STATE_THEME_KEY,
+          'newTheme'
+        );
+        expect(reloadWindowSpy).toHaveBeenCalled();
       });
     })
   );
@@ -97,16 +117,16 @@ describe('NavbarComponent', () => {
     waitForAsync(() => {
       const testTheme = 'deeppurple-amber';
       mockStorageService.getItem.and.returnValue(testTheme);
+      mockThemeService.setTheme.and.returnValue();
+      mockThemeService.setChartTheme.and.returnValue();
+
       fixture.detectChanges();
       fixture.whenStable().then(() => {
         expect(mockStorageService.getItem).toHaveBeenCalledWith(
           STATE_THEME_KEY
         );
         expect(mockThemeService.setTheme).toHaveBeenCalledWith(testTheme);
-        expect(mockStorageService.setItem).toHaveBeenCalledWith(
-          STATE_THEME_KEY,
-          testTheme
-        );
+        expect(mockThemeService.setChartTheme).toHaveBeenCalledWith(testTheme);
       });
     })
   );

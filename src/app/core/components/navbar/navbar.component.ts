@@ -3,10 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { STATE_THEME_KEY } from 'src/app/core/constants/states.constants';
-import {
-  DEFAULT_THEME,
-  VALID_THEMES_TYPES,
-} from 'src/app/core/constants/themes.constants';
+import { VALID_THEMES_TYPES } from 'src/app/core/constants/themes.constants';
 import { ThemeService } from '../../services/theme.service';
 import { LocalStorageService } from '../../services/local-storage.service';
 
@@ -34,17 +31,21 @@ export class NavbarComponent implements OnInit {
   }
 
   themeChangeHandler(themeToSet: string): void {
-    this.themeService.setTheme(themeToSet);
     this.storageService.setItem(STATE_THEME_KEY, themeToSet);
+    this.reloadWindowToApplyThemes(window);
+  }
+
+  reloadWindowToApplyThemes(window: Window): void {
+    window.location.reload();
   }
 
   private chooseTheme(): void {
     const favoritedTheme = this.storageService.getItem(STATE_THEME_KEY);
     if (favoritedTheme != null && VALID_THEMES_TYPES.includes(favoritedTheme)) {
       this.themeService.setTheme(favoritedTheme);
-      this.storageService.setItem(STATE_THEME_KEY, favoritedTheme);
+      this.themeService.setChartTheme(favoritedTheme);
     } else {
-      this.themeService.setTheme(DEFAULT_THEME);
+      this.themeService.setDefaultTheme();
     }
   }
 }

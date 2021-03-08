@@ -1,11 +1,5 @@
 @import "~src/variables.scss";
 
-.market-page {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
 .market {
   display: flex;
   flex-direction: column;
@@ -19,4 +13,18 @@
 .cardrow {
   width: $pageWidth;
   margin-bottom: 1rem;
+}
+
+.card-bodyrow {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.chart-container {
+  width: $pageWidth;
+  height: 50vh;
+  display: grid;
+  align-items: stretch;
 }

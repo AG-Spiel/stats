@@ -5,6 +5,7 @@ import { PageWrapperComponent } from './components/page-wrapper/page-wrapper.com
 import { PageHeadingComponent } from './components/page-heading/page-heading.component';
 import { PageSubheadingComponent } from './components/page-subheading/page-subheading.component';
 import { CardComponent } from './components/card/card.component';
+import { LineChartComponent } from './components/line-chart/line-chart.component';
 
 @NgModule({
   declarations: [
@@ -12,8 +13,14 @@ import { CardComponent } from './components/card/card.component';
     PageHeadingComponent,
     PageSubheadingComponent,
     CardComponent,
+    LineChartComponent,
   ],
   imports: [CommonModule, MaterialModule],
-  exports: [MaterialModule, PageWrapperComponent, CardComponent],
+  exports: [
+    MaterialModule,
+    PageWrapperComponent,
+    CardComponent,
+    LineChartComponent,
+  ],
 })
 export class SharedModule {}
