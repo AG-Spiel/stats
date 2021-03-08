@@ -7,7 +7,11 @@ import { IndizesRoutingModule } from './indizes-routing.module';
 import { IndizesTableComponent } from './components/indizes-table/indizes-table.component';
 
 @NgModule({
-  declarations: [AllIndizesPageComponent, IndexPageComponent, IndizesTableComponent],
+  declarations: [
+    AllIndizesPageComponent,
+    IndexPageComponent,
+    IndizesTableComponent,
+  ],
   imports: [CommonModule, IndizesRoutingModule, SharedModule],
 })
 export class IndizesModule {}

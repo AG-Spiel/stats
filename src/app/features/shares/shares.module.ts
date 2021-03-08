@@ -7,7 +7,11 @@ import { SharesRoutingModule } from './shares-routing.module';
 import { SharesTableComponent } from './components/shares-table/shares-table.component';
 
 @NgModule({
-  declarations: [AllSharesPageComponent, SharePageComponent, SharesTableComponent],
+  declarations: [
+    AllSharesPageComponent,
+    SharePageComponent,
+    SharesTableComponent,
+  ],
   imports: [CommonModule, SharesRoutingModule, SharedModule],
 })
 export class SharesModule {}
