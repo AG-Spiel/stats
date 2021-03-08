@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/AG-Spiel/stats/compare/v1.2.0...v1.3.0) (2021-03-08)
+
+
+### Features
+
+* **charts-theme:** Setup charts theme changer ([a5a932a](https://github.com/AG-Spiel/stats/commit/a5a932a287478d1d91aface8a7760b6808e3faca))
+* **indizes:** Create indizes table ([cd4cb76](https://github.com/AG-Spiel/stats/commit/cd4cb76065f40e08e79c8e8f7274827770fe86f8))
+* **line-chart:** Create shared line-chart component ([f2dbe25](https://github.com/AG-Spiel/stats/commit/f2dbe25729dfaba8b521ee7dfdfe92bd4dc68698))
+* **market:** Implement market line charts ([fbc4476](https://github.com/AG-Spiel/stats/commit/fbc4476737a8a983d2b5a1b77bfef33a2c15de54))
+* **shares:** Create table with all shares ([53f6122](https://github.com/AG-Spiel/stats/commit/53f61220f4280995ddce56de1fb73acb42dbdc81))
+* **stats-service:** Create stats backend service ([de11239](https://github.com/AG-Spiel/stats/commit/de1123913b896f2ce7d46e0f826da649fe535c91))
+
 # [1.2.0](https://github.com/AG-Spiel/stats/compare/v1.1.0...v1.2.0) (2021-03-01)
 
 
