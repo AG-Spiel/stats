@@ -12,6 +12,11 @@ export const URLS = {
     SHARE: {
       ALL: `${AGS_STATS_BASE}/ag`,
       WKN: (wkn: string) => `${AGS_STATS_BASE}/ag/${wkn}`,
+      ORDER: (id: string) => `${AGS_STATS_BASE}/ag/${id}/order`,
+      DEPOT: (id: string) => `${AGS_STATS_BASE}/ag/${id}/depot`,
+      CHART: (id: string) => `${AGS_STATS_BASE}/ag/${id}/chart`,
+      AGSX: (id: string) => `${AGS_STATS_BASE}/ag/${id}/agsx`,
+      ACTIVITY: (id: string) => `${AGS_STATS_BASE}/ag/${id}/activity`,
     },
     INDEX: {
       ALL: `${AGS_STATS_BASE}/index`,
