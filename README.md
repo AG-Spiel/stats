@@ -1,6 +1,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 ![Website](https://img.shields.io/website?down_color=red&down_message=offline&label=website&style=flat-square&up_color=green&up_message=online&url=https%3A%2F%2Fag-spiel.github.io%2Fstats)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=AG-Spiel_stats&metric=alert_status)](https://sonarcloud.io/dashboard?id=AG-Spiel_stats)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=AG-Spiel_stats&metric=security_rating)](https://sonarcloud.io/dashboard?id=AG-Spiel_stats)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=AG-Spiel_stats&metric=coverage)](https://sonarcloud.io/dashboard?id=AG-Spiel_stats)
 [![release](https://github.com/AG-Spiel/stats/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/AG-Spiel/stats/actions/workflows/ci.yml)
 
 # AG-Spiel Statistics
