@@ -1,5 +1,5 @@
 <app-page-wrapper
-  heading="Index-Name (#id)"
+  [heading]="index?.name"
   subheading="Alle Statistiken über einen Index"
 >
   <div class="index cardrow">
@@ -7,13 +7,31 @@
       title="Übersicht"
       subtitle="Kumulierter BW und Kurs aller Mitglieder"
     >
-      <p>Index Card Body</p>
+      <div class="card-bodyrow">
+        <div class="chart-container container">
+          <app-line-chart
+            *ngIf="basicChartUrl"
+            id="basic"
+            [url]="basicChartUrl"
+            [series]="basicChartSeries"
+          ></app-line-chart>
+        </div>
+      </div>
     </app-card>
   </div>
 
   <div class="depot cardrow">
     <app-card title="Depot" subtitle="Kumulierte Depots aller Mitglieder">
-      <p>Index Card Body</p>
+      <div class="card-bodyrow">
+        <div class="chart-container container">
+          <app-line-chart
+            *ngIf="depotChartUrl"
+            id="depot"
+            [url]="depotChartUrl"
+            [series]="depotChartSeries"
+          ></app-line-chart>
+        </div>
+      </div>
     </app-card>
   </div>
 
@@ -22,7 +40,16 @@
       title="Orderbuch"
       subtitle="Kumulierte Orderbücher aller Mitglieder"
     >
-      <p>Index Card Body</p>
+      <div class="card-bodyrow">
+        <div class="chart-container container">
+          <app-line-chart
+            *ngIf="orderChartUrl"
+            id="order"
+            [url]="orderChartUrl"
+            [series]="orderChartSeries"
+          ></app-line-chart>
+        </div>
+      </div>
     </app-card>
   </div>
 </app-page-wrapper>

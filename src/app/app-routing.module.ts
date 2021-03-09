@@ -22,6 +22,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/indizes/indizes.module').then((m) => m.IndizesModule),
   },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./features/not-found/not-found.module').then(
+        (m) => m.NotFoundModule
+      ),
+  },
 ];
 
 @NgModule({

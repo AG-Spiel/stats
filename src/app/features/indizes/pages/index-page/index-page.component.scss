@@ -1,6 +1,30 @@
 @import "~src/variables.scss";
 
+.index {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.card {
+  width: $pageWidth;
+}
+
 .cardrow {
   width: $pageWidth;
   margin-bottom: 1rem;
+}
+
+.card-bodyrow {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.chart-container {
+  width: $pageWidth;
+  height: 50vh;
+  display: grid;
+  align-items: stretch;
 }
