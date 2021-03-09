@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/AG-Spiel/stats/compare/v1.3.0...v1.4.0) (2021-03-09)
+
+
+### Features
+
+* **index-chart:** Create index line charts ([ea3e653](https://github.com/AG-Spiel/stats/commit/ea3e653a8f0195e5cb8d58eb3cc8f5e9097d9724))
+* **not-found:** Add 404 page to catch invalid requests ([060cd3d](https://github.com/AG-Spiel/stats/commit/060cd3d726e2282a45175420622e69c073305502))
+* **share-charts:** Add share line-charts ([26ab29d](https://github.com/AG-Spiel/stats/commit/26ab29dab52e2c809e1432add25dc0e910658e08))
+
 # [1.3.0](https://github.com/AG-Spiel/stats/compare/v1.2.0...v1.3.0) (2021-03-08)
 
 
