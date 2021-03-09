@@ -1,26 +1,53 @@
-# Stats
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+![Website](https://img.shields.io/website?down_color=red&down_message=offline&label=website&style=flat-square&up_color=green&up_message=online&url=https%3A%2F%2Fag-spiel.github.io%2Fstats)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=AG-Spiel_stats&metric=alert_status)](https://sonarcloud.io/dashboard?id=AG-Spiel_stats)
+[![release](https://github.com/AG-Spiel/stats/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/AG-Spiel/stats/actions/workflows/ci.yml)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
+# AG-Spiel Statistics
+This project visualizes publicly available data of the AG-Spiel or userprojects of the game.
 
-## Development server
+In the future this project will bundle data from different userprojects on one website.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Built with Angular and hosted with github-pages.
 
-## Code scaffolding
+To make the hosting of this project as independent and decentralized as possible, github-pages was chosen as hosting service. This way, other developers can fork, develop and host this project themselves with little effort and without incurring ongoing costs.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Table of Content
+- [AG-Spiel Statistics](#ag-spiel-statistics)
+  - [Table of Content](#table-of-content)
+  - [Features](#features)
+  - [Contributing](#contributing)
+  - [Further help](#further-help)
 
-## Build
+## Features
+- List of all Groups
+- List of all shares
+- **Share-Statistics:**
+  - Progress BV/Share und stock price
+  - Progress depot (stocks, cash, bonds, loans, certs)
+  - Progress orderbook (Sell-/Buy-Orders)
+  - Progress activits
+  - Progress AGSX-Points
+- **Group-Statistics:**
+  - Progress of total book value and market value per index
+  - Progress of all summed portfolios in the index(stocks, cash, bonds, loans, certs)
+  - Progress of all summed order books in the group (sell/buy orders)
+- **Market Statistics:**
+  - Progress of various key figures (market capitalization, BW, BBW, SW, FP)
+  - Progress of all portfolios (shares, bonds, loans, certis, cash, net cash)
+  - Progress of all order books (sell and buy orders, cash)
+  - Progress of the takeover protection and the number of players
+  - Progress of the number of premium players (premium, no premium, gold premium, silver premium, number of players)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Contributing
+1. Clone project
+2. Project setup: `npm install`
+3. Start development server: `npm run serve`
+4. Run unittests: `npm test`
+5. Run angular lint: `npm run lint`
+6. Run prettier: `npm run prettier:check`
+7. Build production: `npm rund build:prod`
 
 ## Further help
 
