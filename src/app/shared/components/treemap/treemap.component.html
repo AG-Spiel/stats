@@ -1,0 +1,17 @@
+<div>
+  <div class="input" *ngIf="selected">
+    <h1>{{ title }}</h1>
+    <mat-form-field appearance="fill">
+      <mat-label>Wähle Kategorie</mat-label>
+      <mat-select
+        [(value)]="selected"
+        (selectionChange)="changeSelection($event)"
+      >
+        <mat-option *ngFor="let option of config" [value]="option.value">{{
+          option.text
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div [id]="treeMapId" class="treemap"></div>
+</div>
