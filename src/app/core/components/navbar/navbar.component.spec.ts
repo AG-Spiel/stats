@@ -1,5 +1,6 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { of } from 'rxjs';
 import { STATE_THEME_KEY } from 'src/app/core/constants/states.constants';
 import { LocalStorageService } from '../../services/local-storage.service';
@@ -49,6 +50,7 @@ describe('NavbarComponent', () => {
           useValue: mockStorageService,
         },
       ],
+      imports: [BrowserAnimationsModule],
     }).compileComponents();
   });
 
@@ -127,6 +129,32 @@ describe('NavbarComponent', () => {
         );
         expect(mockThemeService.setTheme).toHaveBeenCalledWith(testTheme);
         expect(mockThemeService.setChartTheme).toHaveBeenCalledWith(testTheme);
+      });
+    })
+  );
+
+  it(
+    'should open an external site in a new tab',
+    waitForAsync(() => {
+      spyOn(window, 'open');
+      const url = 'someUrl';
+
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        component.goToExternalLink(url);
+        expect(window.open).toHaveBeenCalledWith(url, '_blank', 'noopener');
+      });
+    })
+  );
+
+  it(
+    'should toggle isTreemapExpanded',
+    waitForAsync(() => {
+      fixture.detectChanges();
+
+      fixture.whenStable().then(() => {
+        component.toggleTreemap();
+        expect(component.isTreemapExpanded).toEqual(true);
       });
     })
   );

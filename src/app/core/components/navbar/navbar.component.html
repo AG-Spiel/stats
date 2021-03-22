@@ -7,12 +7,32 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false"
   >
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar><mat-icon>summarize</mat-icon> Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/markt" routerLinkActive="active">Markt</a>
-      <a mat-list-item routerLink="/wkn">AGs</a>
-      <a mat-list-item routerLink="/index">Indizes</a>
-      <a mat-list-item routerLink="/treemaps">TreeMaps</a>
+      <a mat-list-item routerLink="/markt" routerLinkActive="active"
+        ><mat-icon>store</mat-icon>Markt</a
+      >
+      <a mat-list-item routerLink="/wkn"><mat-icon>business</mat-icon>AGs</a>
+      <a mat-list-item routerLink="/index"
+        ><mat-icon>groups</mat-icon>Indizes</a
+      >
+      <a mat-list-item (click)="toggleTreemap()"
+        ><mat-icon>park</mat-icon>TreeMaps<mat-icon
+          [@indicatorRotate]="
+            isTreemapExpanded ? 'isTreemapExpanded' : 'isTreemapCollapsed'
+          "
+        >
+          expand_more
+        </mat-icon></a
+      >
+      <div *ngIf="isTreemapExpanded" class="subgroup-first">
+        <a mat-list-item routerLink="/treemap/ags" class="subgroup-first"
+          ><mat-icon>business</mat-icon>AGs</a
+        >
+        <a mat-list-item routerLink="/treemap/indizes" class="subgroup-first"
+          ><mat-icon>groups</mat-icon>Indizes</a
+        >
+      </div>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -30,9 +50,18 @@
         <mat-icon>show_chart</mat-icon>
         <span>Statistiken</span>
       </div>
-      <app-colorpicker
-        (themeChange)="themeChangeHandler($event)"
-      ></app-colorpicker>
+      <div class="right-group">
+        <a
+          (click)="goToExternalLink('https://github.com/AG-Spiel/stats')"
+          class="github"
+          routerLink=""
+        >
+          <fa-icon [icon]="faGithub" size="lg"></fa-icon>
+        </a>
+        <app-colorpicker
+          (themeChange)="themeChangeHandler($event)"
+        ></app-colorpicker>
+      </div>
     </mat-toolbar>
     <ng-content> </ng-content>
   </mat-sidenav-content>

@@ -12,6 +12,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 const materialModules = [
   MatButtonModule,
@@ -27,6 +30,9 @@ const materialModules = [
   MatPaginatorModule,
   MatSortModule,
   MatInputModule,
+  MatExpansionModule,
+  MatSelectModule,
+  MatFormFieldModule,
 ];
 
 @NgModule({
