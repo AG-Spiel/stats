@@ -23,6 +23,13 @@ const routes: Routes = [
       import('./features/indizes/indizes.module').then((m) => m.IndizesModule),
   },
   {
+    path: 'treemap',
+    loadChildren: () =>
+      import('./features/treemaps/treemaps.module').then(
+        (m) => m.TreemapsModule
+      ),
+  },
+  {
     path: '**',
     loadChildren: () =>
       import('./features/not-found/not-found.module').then(

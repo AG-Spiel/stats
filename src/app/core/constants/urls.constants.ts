@@ -11,6 +11,7 @@ export const URLS = {
     },
     SHARE: {
       ALL: `${AGS_STATS_BASE}/ag`,
+      TREEMAP: `${AGS_STATS_BASE}/ag/treemap/last`,
       WKN: (wkn: string) => `${AGS_STATS_BASE}/ag/${wkn}`,
       ORDER: (id: string) => `${AGS_STATS_BASE}/ag/${id}/order`,
       DEPOT: (id: string) => `${AGS_STATS_BASE}/ag/${id}/depot`,
@@ -25,6 +26,5 @@ export const URLS = {
       DEPOT: (id: string) => `${AGS_STATS_BASE}/index/${id}/depot`,
       CHART: (id: string) => `${AGS_STATS_BASE}/index/${id}/chart`,
     },
-    TREEMAP: {},
   },
 };
