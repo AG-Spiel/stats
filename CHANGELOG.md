@@ -1,3 +1,12 @@
+# [1.5.0](https://github.com/AG-Spiel/stats/compare/v1.4.0...v1.5.0) (2021-03-22)
+
+
+### Features
+
+* **index-treemap:** Setup indizes treemap ([a2b631c](https://github.com/AG-Spiel/stats/commit/a2b631c52482d9c97264258a1765e59b1304574a))
+* **shares-treemap:** Setup shares-treemap ([110bf1c](https://github.com/AG-Spiel/stats/commit/110bf1c2f512c5587c5fe1c9d675148cfc37ef16))
+* **treemap:** Create shared treemap component ([0926ae7](https://github.com/AG-Spiel/stats/commit/0926ae78cf7a4ed4815502580f4e87a60d709288))
+
 # [1.4.0](https://github.com/AG-Spiel/stats/compare/v1.3.0...v1.4.0) (2021-03-09)
 
 
