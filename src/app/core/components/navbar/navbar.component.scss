@@ -9,7 +9,7 @@
 }
 
 .sidenav {
-  width: 200px;
+  width: 150px;
 }
 
 .sidenav .mat-toolbar {
@@ -20,4 +20,18 @@
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+.github {
+  color: inherit;
+}
+
+.right-group {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center center;
+}
+
+.subgroup-first {
+  padding-left: 1vw;
 }
